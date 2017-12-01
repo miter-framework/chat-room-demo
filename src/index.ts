@@ -1,13 +1,21 @@
 import { Miter } from 'miter';
-import { MiterSocketService } from 'miter-socket-service';
 import { AppControllers } from './controllers';
+import { AppServices } from './services';
+
+import { MiterSocketService } from 'miter-socket-service';
+import { ChatroomSocketService } from './services/chatroom-socket.service';
 
 Miter.launch({
     name: 'chat-room-demo',
+    port: 8080,
     
     router: {
         controllers: AppControllers
     },
     
-    services: [MiterSocketService]
+    services: AppServices,
+    
+    inject: [
+        { provide: MiterSocketService, useClass: ChatroomSocketService }
+    ]
 });

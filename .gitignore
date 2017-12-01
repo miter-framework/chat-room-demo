@@ -2,7 +2,15 @@
 
 /node_modules/
 /dist/
+/migrations/bin/
+
+/config/**/local.js
+/config/**/local-*.js
+/config/**/local-*.json
+/config/**/local-*.sh
 
 .yarnclean
 yarn-error.log
 npm-debug.log*
+
+/log/**

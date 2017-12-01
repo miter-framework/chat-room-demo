@@ -74,12 +74,6 @@
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.6.tgz#3e02972728c69248c2af08d60a48cbb8680fffdf"
 
-"@types/jsonwebtoken@^7.2.1":
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-7.2.3.tgz#483c8f39945e1e6d308dcc51fd4aeca5208d4dca"
-  dependencies:
-    "@types/node" "*"
-
 "@types/lodash@*", "@types/lodash@^4.14.37":
   version "4.14.86"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.86.tgz#6788d3d75032c46322ff1c144c948cf8117c405b"
@@ -1047,7 +1041,7 @@ json3@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/json3/-/json3-3.3.2.tgz#3c0434743df93e2f5c42aee7b19bcb483575f4e1"
 
-jsonwebtoken@^7.3.0, jsonwebtoken@^7.4.1:
+jsonwebtoken@^7.3.0:
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-7.4.3.tgz#77f5021de058b605a1783fa1283e99812e645638"
   dependencies:
@@ -1251,9 +1245,13 @@ minimist@~0.0.1:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
 
-miter@^0.5.7:
-  version "0.5.7"
-  resolved "https://registry.yarnpkg.com/miter/-/miter-0.5.7.tgz#c4f94fec0debe447375e88823c8df70877390f6c"
+miter-socket-service@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/miter-socket-service/-/miter-socket-service-0.0.1.tgz#a41cefc4968f3ecc2416b43382d0ac26baf59f8d"
+
+miter@^0.5.8:
+  version "0.5.8"
+  resolved "https://registry.yarnpkg.com/miter/-/miter-0.5.8.tgz#70b2acd574dfbdcf359b1b1bbda983b6b831bab1"
   dependencies:
     "@types/body-parser" "^0.0.33"
     "@types/cli-color" "^0.3.29"
@@ -2021,10 +2019,6 @@ type-is@~1.6.15:
 typescript@2.3.4:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.4.tgz#3d38321828231e434f287514959c37a82b629f42"
-
-typescript@^2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
 
 ultron@~1.1.0:
   version "1.1.1"
