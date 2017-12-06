@@ -31,9 +31,10 @@
         "tslint": "^4.5.1"
     },
     "dependencies": {
+        "@types/socket.io": "^1.4.31",
         "express": "^4.14.0",
         "miter": "^0.5.9",
-        "miter-socket-service": "^0.0.1",
+        "miter-socket-service": "^0.0.2",
         "socket.io": "^2.0.4",
         "typescript": "2.3.4"
     },

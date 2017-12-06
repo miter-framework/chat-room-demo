@@ -1,19 +1,22 @@
-import { Service } from 'miter';
-import { MiterSocketService } from 'miter-socket-service';
+import { Service, LoggerCore } from 'miter';
+import { SocketService, SocketMetadata } from 'miter-socket-service';
 import * as http from 'http';
 import * as https from 'https';
 
 @Service()
-export class ChatroomSocketService extends MiterSocketService {
-    constructor() {
-        super();
+export class ChatroomSocketService extends SocketService {
+    constructor(
+        sockMeta: SocketMetadata,
+        loggerCore: LoggerCore
+    ) {
+        super(sockMeta, loggerCore.getSubsystem('socket-service'));
     }
-    
+
     async start() {
         await super.start();
-    }
-    async listen(webServer: http.Server | https.Server) {
-        await super.listen(webServer);
         
+        this.handle('chat-msg', (socket, msg: string) => {
+            this.broadcast('chat-msg', msg);
+        });
     }
 }

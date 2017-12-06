@@ -3,9 +3,69 @@
     <head>
         <title>Chat Room Demo</title>
         <script src="/socket.io/socket.io.js"></script>
-        <script>console.log(io);</script>
+        <script>
+            let socket = io();
+            
+            socket.on('chat-msg', msg => {
+                let span = document.createElement('span');
+                span.textContent = msg;
+                
+                let containerDiv = document.getElementById('chatMessages');
+                containerDiv.appendChild(span);
+            });
+            
+            function submitForm(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                let input = document.getElementById('chatMsgInput');
+                let msg = input.value;
+                input.value = '';
+                socket.emit('chat-msg', msg);
+            }
+        </script>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            
+            #chatMessages {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 47px;
+            }
+            #chatMessages > * {
+                display: block;
+                padding: 8px 16px;
+            }
+            
+            .chatMsgForm {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 8px;
+                background: lightgray;
+            }
+            .chatMsgForm > input {
+                width: calc(100% - 100px);
+                padding: 6px;
+            }
+            .chatMsgForm > button {
+                position: absolute;
+                right: 8px;
+                bottom: 8px;
+                padding: 6px;
+                width: 100px;
+            }
+        </style>
     </head>
     <body>
-        Here's your chat client!
+        <div id="chatMessages"></div>
+        <form class="chatMsgForm" onsubmit="submitForm(event)">
+            <input type="text" name="chatMsg" id="chatMsgInput" />
+            <button type="submit" autofocus="autofocus">Submit</button>
+        </form>
     </body>
 </html>
